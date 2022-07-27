@@ -1,0 +1,9 @@
+.img_logo{
+    width:8%;
+    height:8%;
+    object-fit: contain;
+}
+.navbar__div{
+    width:100%;
+    background-color: #131A22;
+}
