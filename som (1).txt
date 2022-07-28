@@ -1,0 +1,586 @@
+Q5)
+
+// Java program to generate pythagorean
+// triplets smaller than a given limit
+import java.io.*;
+import java.util.*;
+
+class Pythagorean {
+
+	// Function to generate pythagorean
+	// triplets smaller than limit
+	static void pythagoreanTriplets(int limit)
+	{
+
+		// triplet: a^2 + b^2 = c^2
+		int a, b, c = 0;
+
+		// loop from 2 to max_limit
+		int m = 2;
+
+		// Limiting c would limit
+		// all a, b and c
+		while (c < limit) {
+
+			// now loop on j from 1 to i-1
+			for (int n = 1; n < m; ++n) {
+				// Evaluate and print
+				// triplets using
+				// the relation between
+				// a, b and c
+				a = m * m - n * n;
+				b = 2 * m * n;
+				c = m * m + n * n;
+
+				if (c > limit)
+					break;
+
+				System.out.println(a + " " + b + " " + c);
+			}
+			m++;
+		}
+	}
+
+	// Driver Code
+	public static void main(String args[])
+	{
+		int limit = 20;
+		pythagoreanTriplets(limit);
+	}
+}
+
+Output : 
+
+3 4 5
+8 6 10
+5 12 13
+15 8 17
+12 16 20
+
+
+======================================================================
+
+Q8)
+
+import java.util.Scanner;
+
+public class Area
+{
+    public static void main(String args[]) {
+        
+        Scanner in = new Scanner(System.in);
+        
+        System.out.println("Enter c to calculate area of circle");
+        System.out.println("Enter s to calculate area of square");
+        System.out.println("Enter r to calculate area of rectangle");
+        System.out.print("Enter your choice: ");
+        char choice = in.next().charAt(0);
+        
+        switch(choice) {
+            case 'c':
+                System.out.print("Enter radius of circle: ");
+                double r = in.nextDouble();
+                double ca = (22 / 7.0) * r * r;
+                System.out.println("Area of circle = " + ca);
+                break;
+                
+            case 's':
+                System.out.print("Enter side of square: ");
+                double side = in.nextDouble();
+                double sa = side * side;
+                System.out.println("Area of square = " + sa);
+                break;
+                
+            case 'r':
+                System.out.print("Enter length of rectangle: ");
+                double l = in.nextDouble();
+                System.out.print("Enter breadth of rectangle: ");
+                double b = in.nextDouble();
+                double ra = l * b;
+                System.out.println("Area of rectangle = " + ra);
+                break;
+                
+            default:
+                System.out.println("Wrong choice!");
+        }
+    }
+}
+
+Output:
+
+Enter c to calculate area of circle
+Enter s to calculate area of square
+Enter r to calculate area of rectangle
+Enter your choice: s
+Enter side of square: 5
+Area of square = 25.0
+
+VDT:
+
+variable name              Variable type                use
+r                          double                       to store radius of circle
+==================================================================================
+
+Q)7
+
+// Java program to find roots
+// of a quadratic equation
+
+import java.io.*;
+import static java.lang.Math.*;
+class Quadratic {
+
+	// Prints roots of quadratic
+	// equation ax * 2 + bx + x
+	static void findRoots(int a, int b, int c)
+	{
+		// If a is 0, then equation is not
+		// quadratic, but linear
+
+		if (a == 0) {
+			System.out.println("Invalid");
+			return;
+		}
+
+		int d = b * b - 4 * a * c;
+		double sqrt_val = sqrt(abs(d));
+
+		if (d > 0) {
+			System.out.println(
+				"ROOTS ARE REAL AND DISTINCT \n");
+
+			System.out.println(
+				(double)(-b + sqrt_val) / (2 * a) + "\n"
+				+ (double)(-b - sqrt_val) / (2 * a));
+		}
+		else if (d == 0) {
+			System.out.println(
+				"EQUAL ROOTS and VALUE OF ROOTS IS \n");
+
+			System.out.println(-(double)b / (2 * a) + "\n"
+							+ -(double)b / (2 * a));
+		}
+		else // d < 0
+		{
+			System.out.println("IMAGINARY ROOTS \n");
+
+			System.out.println(-(double)b / (2 * a) + " + i"
+							+ sqrt_val / (2 * a) + "\n"
+							+ -(double)b / (2 * a)
+							+ " - i" + sqrt_val / (2 * a)) ;
+		}
+	}
+
+	// Driver code
+	public static void main(String args[])
+	{
+
+		int a = 1, b = -7, c = 12;
+	
+		// Function call
+		findRoots(a, b, c);
+	}
+}
+
+Output:
+
+Roots are real and different 
+4.000000
+3.000000
+
+===============================================================
+
+
+Q4)
+
+// Java implementation of the above approach
+
+class Abc
+{
+
+	static void check(char ch)
+	{
+	
+		if (ch >= 'A' && ch <= 'Z')
+			System.out.println("\n" + ch +
+					" is an UpperCase character");
+	
+		else if (ch >= 'a' && ch <= 'z')
+			System.out.println("\n" + ch +
+					" is an LowerCase character" );
+	
+		else if (ch >= '0' && ch <= '9')
+			System.out.println("\n" + ch +
+					" is a digit" );
+
+        else System.out.println("\n" + ch +
+					" is a Special character" );
+                   
+	}
+
+	// Driver Code
+	public static void main(String []args)
+	{
+		char ch;
+	
+		// Get the character
+		ch = 'A';
+	
+		// Check the character
+		check(ch);
+	
+		// Get the character
+		ch = 'a';
+	
+		// Check the character
+		check(ch);
+	
+		// Get the character
+		ch = '0';
+	
+		// Check the character
+		check(ch);
+	
+	}
+}
+
+Output:
+
+A is an UpperCase character
+a is an LowerCase character
+0 is a digit
+
+==============================================
+
+Q3)
+
+import java.util.*;
+
+class Digit {
+
+	static int countDigit(long n)
+	{
+		return (int)Math.floor(Math.log10(n) + 1);
+	}
+
+	/* Driver code */
+	public static void main(String[] args)
+	{
+		long n = 12;
+        if(n==1)
+		System.out.print("single digit");
+        else if (n==2)
+        System.out.print("double digit");	
+        else
+        System.out.print("triple digit");        					
+	}
+}
+
+Output:
+double digit
+
+==============================================
+
+
+Q10)
+
+// Java program to compute
+// sum of digits in number.
+import java.io.*;
+
+class DigitSum {
+
+	/* Function to get sum of digits */
+	static int getSum(int n)
+	{
+		int sum = 0;
+
+		while (n != 0) {
+			sum = sum + n % 10;
+			n = n / 10;
+		}
+
+		return sum;
+	}
+
+	// Driver code
+	public static void main(String[] args)
+	{
+		int n = 687;
+
+		System.out.println(getSum(n));
+	}
+}
+
+Output:
+21
+
+====================================================
+
+Q11)
+
+// Java program to reverse a number
+
+class RevNum {
+	/* Iterative function to reverse
+	digits of num*/
+	static int reverseDigits(int num)
+	{
+		int rev_num = 0;
+		while (num > 0) {
+			rev_num = rev_num * 10 + num % 10;
+			num = num / 10;
+		}
+		return rev_num;
+	}
+
+	// Driver code
+	public static void main(String[] args)
+	{
+		int num = 4562;
+		System.out.println("Reverse of no. is "
+						+ reverseDigits(num));
+	}
+}
+
+Output:
+Reverse of no. is 2654
+
+====================================================
+
+
+Q12)
+
+import java.io.*;
+
+class Palindrome {
+	public static void main(String[] args)
+	{
+		int input1 = 7007;
+		String str_input1 = String.valueOf(input1); //conversion of int to string
+		String str = new StringBuilder(str_input1).reverse().toString(); // reversing the input string
+
+		if (str.equals(str_input1)) //Checking for Palindrome
+		{
+			System.out.println(input1 + " is Palindrome");
+		}
+		else
+		{
+			System.out.println(input1+ " is not Palindrome");
+		}
+	}
+}
+
+Output:
+
+7007 is Palindrome
+
+========================================================
+
+
+Q13)
+
+// Java program to determine whether the number is
+// Armstrong number or not
+
+public class ArmstrongNumber {
+	public static void main(String[] args)
+	{
+
+		int n = 153;
+		int temp = n;
+		int p = 0;
+
+		/*function to calculate
+		the sum of individual digits
+		*/
+		while (n > 0) {
+
+			int rem = n % 10;
+			p = (p) + (rem * rem * rem);
+			n = n / 10;
+		}
+
+		/* condition to check whether
+		the value of P equals
+		to user input or not. */
+		if (temp == p) {
+			System.out.println("Yes. It is Armstrong No.");
+		}
+		else {
+			System.out.println(
+				"No. It is not an Armstrong No.");
+		}
+	}
+}
+
+Output:
+Yes. It is Armstrong No.
+
+====================================================
+
+Q14)
+
+// Optimised school method based JAVA program
+// to check if a number is prime
+class IsPrime {
+
+	static boolean isPrime(int n)
+	{
+		// Corner case
+		if (n <= 1)
+			return false;
+
+		// Check from 2 to square root of n
+		for (int i = 2; i * i <= n; i++)
+			if (n % i == 0)
+				return false;
+
+		return true;
+	}
+
+	// Driver Program
+	public static void main(String args[])
+	{
+		if (isPrime(11))
+			System.out.println(" true");
+		else
+			System.out.println(" false");
+		if (isPrime(15))
+			System.out.println(" true");
+		else
+			System.out.println(" false");
+	}
+}
+
+Output:
+ true
+ false
+
+======================================================================
+
+Q15)
+
+public class Abcd {
+	public static void main(String args[])
+	{
+		String binaryNumber = "1001";
+		System.out.println(Integer.parseInt(binaryNumber, 2));
+	}
+}
+
+Output:
+9
+
+======================================================================
+
+Q16)
+
+//To convert Decimal to Binary Number//
+import java.util.*;
+	public class Main{
+		public static void main(String [] args){
+			//input//
+			int number =15;
+			
+			//output//
+			System.out.println("the binary number is : "+ Integer.toString(number,2));			
+		}
+	}
+
+Output:
+1111
+
+======================================================================
+
+Q17)
+
+// Java program to find LCM of two numbers.
+class Test
+{
+	// Recursive method to return gcd of a and b
+	static int gcd(int a, int b)
+	{
+		if (a == 0)
+			return b;
+		return gcd(b % a, a);
+	}
+	
+	// method to return LCM of two numbers
+	static int lcm(int a, int b)
+	{
+		return (a / gcd(a, b)) * b;
+	}
+	
+	// Driver method
+	public static void main(String[] args)
+	{
+		int a = 15, b = 20;
+		System.out.println("LCM of " + a +
+						" and " + b +
+					" is " + lcm(a, b));
+
+        System.out.println("HCF of " + a +
+						" and " + b +
+					" is " + gcd(a, b));
+	}
+}
+
+Output:
+
+LCM of 15 and 20 is 60
+HCF of 15 and 20 is 5
+
+==========================================================
+
+Q27)
+
+import java.io.*;
+import java.util.*;
+
+class RevString {
+	
+	//Driver Code
+	public static void main (String[] args) {
+		String str = "abcd";//Input String
+				
+		StringBuffer sb = new StringBuffer(str);
+		
+		sb.reverse();
+		
+		//Step 3: Convert the StringBuffer to string by using toString() method
+		System.out.println(sb.toString());
+		
+	}
+}
+
+Output:
+dcba
+
+==========================================================
+
+Q28)
+
+// Java program to reverse a string
+// s = input()
+public class ReverseWords
+{
+
+	public static void main(String[] args)
+	{
+		String s[] = "i like this program very much".
+										split(" ");
+		String ans = "";
+		for (int i = s.length - 1; i >= 0; i--)
+		{
+			ans += s[i] + " ";
+		}
+		System.out.println("Reversed String:");
+		System.out.println(ans.substring(0,
+								ans.length() - 1));
+	}
+}
+
+Output: 
+Reversed String:
+much very program this like i
