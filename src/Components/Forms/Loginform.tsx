@@ -8,7 +8,7 @@ function Loginform() {
  </div>
  <div className='maindiv'>
     <div className='loginform__div'>
-        <h1>Sign-In</h1>
+        <h1>Sign-In</h1>          
         <div>
             <label>Email or mobile phone number</label><br/>
             <input type ="text" className="input__field"/> 
