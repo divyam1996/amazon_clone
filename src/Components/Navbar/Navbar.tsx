@@ -2,6 +2,7 @@
 import React from 'react'
 import SearchIcon from '@mui/icons-material/Search';
 import './Navbar.css';
+import { BrowserRouter, Route, Link,Routes } from "react-router-dom";
 
 function Navbar() {
   return (
@@ -13,10 +14,12 @@ function Navbar() {
         <SearchIcon/>
         </div>
       </div>
-    <div>Country drop down</div>
-    <div>Hello</div>
-    <div>Returns</div>
-    <div>CART</div>
+      <BrowserRouter>
+        <Link className="nav-link active" to="/">Country drop down</Link>
+        <Link className="nav-link active" to="/login">Login</Link>
+        <Link className="nav-link active" to="/">Returns</Link>
+        <Link className="nav-link active" to="/">CART</Link>
+    </BrowserRouter>
         
    
     </div>
