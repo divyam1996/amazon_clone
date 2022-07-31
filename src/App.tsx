@@ -7,7 +7,7 @@ import Loginform from './Components/Forms/Loginform';
 function App() {
   return (
     <div className="App">
-      <Navbar/>
+      {/* <Navbar/> */}
       <Loginform/>
     </div>
   );

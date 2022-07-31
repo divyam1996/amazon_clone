@@ -1,37 +1,98 @@
 .loginform__div{
-    display: block;
+    margin-top:13px;
+    width:100%;
     border-radius: 4px;
     border: 1px #ddd solid;
     background-color: #fff;
+    height:35vh;
+
+   
 }
-.img_logo1{
-    width:8%;
-    height:8%;
+.img_logo1>img{
+    height:85px;
+    width:200px;
     object-fit: contain;
 
 }
-.btnclass{
-    background-color:orange;
-    display: block;
-    text-align: center;
-}
-.input__field{
-    background-color: #fff;
-    height: 31px;
-    padding: 3px 7px;
-    line-height: normal;
-    border: 1px solid #a6a6a6;
-    border-top-color: #949494;
-    border-radius: 3px;
-    box-shadow: 0 1px 0 rgb(255 255 255 / 50%), 0 1px 0 rgb(0 0 0 / 7%) inset;
-    outline: 0;
-    -webkit-transition: all .1s linear;
-    transition: all .1s linear;
-    color: #111;
-    width:50%;
+.img_logo1{
+   
+   display: flex;
+   justify-content:center;
+   align-items:center;
+   height:20%;
 
 }
+.btnclass{
+    background-color: #FEBD69;
+    color: black;
+    text-align: center;
+    width: 102%;
+    height:28px;
+    border-radius: 5px;
+    border: 1px solid #f69413;
+    font-size:400
+}
+
 .maindiv{
-    display:flex;
-    justify-content: center;
+    width:22%;
+    height:60vh;
+   position:absolute;
+   left:50%;
+   top:0;
+   transform: translateX(-50%);
+
+  
+    
+}
+.login__wrap{
+
+    position: relative;
+}
+.loginform__title{
+    font-weight:400;
+    
+}
+.form_group{
+    width: 100%;
+    margin-top:10px;
+    margin-bottom:15px;
+}
+
+.form_group>input{
+    width: 100%;
+    height:25px;
+    border-radius: 5px;
+    border: 1px solid black;
+    margin-top:5px;
+}
+.form_group>input:focus{
+    outline:2px solid #f69413;
+    /* border: 1px solid #f69413; */
+    /* border:none; */
+}
+.loginform__div{
+  padding:34px
+}
+.form_group>label{
+    font-weight:400;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans;
+  
+
+}
+small{
+    font-size:300
+}
+.signup__div{
+    margin-top:10px;
+    width:100%;
+}
+.signup__div>p{
+    text-align:center
+}
+.signup__div>button{
+    width: 125%;
+    height:28px;
+    border-radius: 5px;
+    border: 1px solid black;
+    margin-top:5px;
 }
